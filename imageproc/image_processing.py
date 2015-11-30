@@ -84,14 +84,14 @@ def bw(image_surf):
             pixels3d[x,y] = grayPixel(pixels3d[x,y])
 
 def b(pixel):
-    if (pixel[0]>=245, pixel[1]>=245, pixel[2]>=245)
-        return (pixel[0], pixel[1], pixel[2])
-    else
+    if (pixel[0]>=245, pixel[1]>=245, pixel[2]>=245):
+        return (255, 255, 255)
+    else:
         return (pixel[0]+10, pixel[1]+10, pixel[2]+10)
 
 
 def d(pixel):
-    if (pixel[0]<=10, pixel[1]<=10, pixel[2]<=10)
-    return (pixel[0], pixel[1], pixel[2])
-    else
-    return (pixel[0]-10, pixel[1]-10, pixel[2]-10)
+    if (pixel[0]<=10, pixel[1]<=10, pixel[2]<=10):
+        return (0, 0, 0)
+    else:
+        return (pixel[0]-10, pixel[1]-10, pixel[2]-10)
