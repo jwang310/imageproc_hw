@@ -18,7 +18,7 @@ def grayPixel(pixel):
     green_intensity = int(pixel[1])
     blue_intensity = int(pixel[2])
     ave_intensity = (red_intensity + green_intensity + blue_intensity)//3
-    
+
     return ((ave_intensity, ave_intensity, ave_intensity))
 
 # channel: pixel -> channel -> pixel
@@ -56,7 +56,7 @@ def invert(image_surf):
     # get pixel dimensions of image
     rows = image_surf.get_size()[0]
     cols = image_surf.get_size()[1]
-    
+
     # get reference to and lock pixel array
     pixels3d = pg.surfarray.pixels3d(image_surf)
 
@@ -74,7 +74,7 @@ def bw(image_surf):
     # get pixel dimensions of image
     rows = image_surf.get_size()[0]
     cols = image_surf.get_size()[1]
-    
+
     # get reference to and lock pixel array
     pixels3d = pg.surfarray.pixels3d(image_surf)
 
@@ -83,3 +83,15 @@ def bw(image_surf):
         for y in range(cols):
             pixels3d[x,y] = grayPixel(pixels3d[x,y])
 
+def b(pixel):
+    if (pixel[0]>=245, pixel[1]>=245, pixel[2]>=245)
+        return (pixel[0], pixel[1], pixel[2])
+    else
+        return (pixel[0]+10, pixel[1]+10, pixel[2]+10)
+
+
+def d(pixel):
+    if (pixel[0]<=10, pixel[1]<=10, pixel[2]<=10)
+    return (pixel[0], pixel[1], pixel[2])
+    else
+    return (pixel[0]-10, pixel[1]-10, pixel[2]-10)
